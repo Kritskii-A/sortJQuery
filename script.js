@@ -1,14 +1,24 @@
-let items = $("#list .item"); //путь к items
+const sectorAll = "#list .item"; //sector of items
+const inputName = "#SearchItem"; // ID input search
+
+let items = $(sectorAll);
+
+//return all items
+const allItems = () => {
+  return (items = $(sectorAll));
+};
 
 // sort cost
 const buttonCost = document.querySelector(".costSort");
 buttonCost.onclick = () => {
+  allItems();
   minMax("cost", buttonCost);
 };
 
 //sort ABC
 const buttonAbc = document.querySelector(".costAbc");
 buttonAbc.onclick = () => {
+  allItems();
   minMax("sort", buttonAbc);
 };
 
@@ -47,8 +57,7 @@ function sort321(typeSort) {
 // FN SEARCH
 function search() {
   let itemSearch = items;
-  $("#SearchItem").keyup(function () {
-    //change your input ID
+  $(inputName).keyup(function () {
     $(this).val() == "" ? $(items).appendTo("#list") : search(this);
   });
 
