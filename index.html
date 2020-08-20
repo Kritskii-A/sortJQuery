@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sort jquery (Сортировка с помощью jquery)</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <style>
+      a.costAbc.up::after,
+      a.costSort.up::after {
+        content: "▲";
+        position: absolute;
+      }
+      a.costAbc.down::after,
+      a.costSort.down::after {
+        content: "▼";
+        position: absolute;
+      }
+      .item {
+        padding: 10px;
+      }
+      .item:nth-child(2n) {
+        background-color: #ddd;
+      }
+    </style>
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://kritskii-a.github.io/" class="navbar-brand"
+            >Sort jquery (Сортировка с помощью jquery)</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <a href="#" class="costSort">Цена</a><br />
+          <a href="#" class="costAbc">Алфавит</a>
+        </div>
+        <div id="list">
+          <div class="item" data-sort="3" data-cost="1">
+            Картошка - 100р.
+          </div>
+          <div class="item" data-sort="5" data-cost="4">
+            Яблоко - 400р.
+          </div>
+          <div class="item" data-sort="1" data-cost="3">
+            Апельсин - 300р.
+          </div>
+          <div class="item" data-sort="4" data-cost="2">
+            Морковь - 200р.
+          </div>
+          <div class="item" data-sort="2" data-cost="5">
+            Банан - 500р.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+      integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+      crossorigin="anonymous"
+    />
+    <script src="script.js"></script>
+  </body>
+</html>
