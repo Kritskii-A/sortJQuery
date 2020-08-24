@@ -1,4 +1,5 @@
 const sectorAll = "#list .item"; //sector of items
+const sectorId = "#list"; //sector ID
 const inputName = "#SearchItem"; // ID input search
 
 let items = $(sectorAll);
@@ -43,7 +44,7 @@ function sort123(typeSort) {
   arItems.sort(function (a, b) {
     return $(a).data(typeSort) - $(b).data(typeSort);
   });
-  $(arItems).appendTo("#list");
+  $(arItems).appendTo(sectorId);
 }
 
 function sort321(typeSort) {
@@ -51,14 +52,14 @@ function sort321(typeSort) {
   arItems.sort(function (a, b) {
     return $(b).data(typeSort) - $(a).data(typeSort);
   });
-  $(arItems).appendTo("#list");
+  $(arItems).appendTo(sectorId);
 }
 
 // FN SEARCH
 function search() {
   let itemSearch = items;
   $(inputName).keyup(function () {
-    $(this).val() == "" ? $(items).appendTo("#list") : search(this);
+    $(this).val() == "" ? $(items).appendTo(sectorId) : search(this);
   });
 
   const search = function (inElem) {
@@ -69,7 +70,7 @@ function search() {
           .toLowerCase()
           .indexOf($(inElem).val().toLowerCase()) >= 0
       ) {
-        $(itemSearch[n]).appendTo("#list");
+        $(itemSearch[n]).appendTo(sectorId);
       }
     }
   };
