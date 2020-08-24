@@ -15,15 +15,25 @@
   </head>
   <body>
     <style>
+      a.costAbc::after,
+      a.costSort::after {
+        content: "⇵";
+        position: absolute;
+        font-size: 20px;
+        margin-left: 5px;
+        margin-top: -3px;
+      }
       a.costAbc.up::after,
       a.costSort.up::after {
         content: "▲";
         position: absolute;
+        margin-top: -4px;
       }
       a.costAbc.down::after,
       a.costSort.down::after {
         content: "▼";
         position: absolute;
+        margin-top: -4px;
       }
       .item {
         padding: 10px;
